@@ -42,4 +42,10 @@ def user_info(request):
     """
 
     return HttpResponse(text, content_type="text/plain")
+
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def private_place(request):
+    return HttpResponse("Shhh, members only!", content_type="text/plain")
     
